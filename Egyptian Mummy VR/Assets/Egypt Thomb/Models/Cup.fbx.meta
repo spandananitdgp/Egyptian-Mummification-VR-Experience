@@ -1,0 +1,102 @@
+fileFormatVersion: 2
+guid: 6c48301e720fcbf478d1decddc39b4ef
+timeCreated: 1429916029
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: world_plant_pots_b_01
+    100004: world_plant_pots_d_01
+    100006: world_plant_pots_e_01
+    100008: world_plant_pots_f_01
+    100010: world_plant_pots_g_01
+    100012: world_plant_pots_h_01
+    100014: world_plant_pots_j_01
+    400000: //RootNode
+    400002: world_plant_pots_b_01
+    400004: world_plant_pots_d_01
+    400006: world_plant_pots_e_01
+    400008: world_plant_pots_f_01
+    400010: world_plant_pots_g_01
+    400012: world_plant_pots_h_01
+    400014: world_plant_pots_j_01
+    2300000: world_plant_pots_b_01
+    2300002: world_plant_pots_d_01
+    2300004: world_plant_pots_e_01
+    2300006: world_plant_pots_f_01
+    2300008: world_plant_pots_g_01
+    2300010: world_plant_pots_h_01
+    2300012: world_plant_pots_j_01
+    3300000: world_plant_pots_b_01
+    3300002: world_plant_pots_d_01
+    3300004: world_plant_pots_e_01
+    3300006: world_plant_pots_f_01
+    3300008: world_plant_pots_g_01
+    3300010: world_plant_pots_h_01
+    3300012: world_plant_pots_j_01
+    4300000: world_plant_pots_b_01
+    4300002: world_plant_pots_d_01
+    4300004: world_plant_pots_e_01
+    4300006: world_plant_pots_f_01
+    4300008: world_plant_pots_g_01
+    4300010: world_plant_pots_h_01
+    4300012: world_plant_pots_j_01
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
