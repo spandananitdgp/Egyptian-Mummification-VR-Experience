@@ -1,5 +1,7 @@
-# VRProject2
+# Egyptian Mummification VR Experience 
 
 This is a project for Virtual Reality (Spring 2016) class at University of Florida.
-Course Details: https://ufvr2016.wordpress.com/
 
+# References
+1. Egypt Thomb Asset From Krzysztof J.
+https://www.assetstore.unity3d.com/en/#!/content/36586
