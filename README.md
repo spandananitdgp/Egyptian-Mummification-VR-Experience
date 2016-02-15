@@ -8,3 +8,6 @@ https://www.assetstore.unity3d.com/en/#!/content/36586
 
 2. Medieval Props Pack
 https://www.assetstore.unity3d.com/en/#!/content/41540
+
+3. STEVEN HALPERN Cymatic Imagery of Sacred Chant recorded Inside the Great Pyramid
+https://www.youtube.com/watch?v=Yw13EAX3cZk
