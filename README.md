@@ -11,3 +11,9 @@ https://www.assetstore.unity3d.com/en/#!/content/41540
 
 3. STEVEN HALPERN Cymatic Imagery of Sacred Chant recorded Inside the Great Pyramid
 https://www.youtube.com/watch?v=Yw13EAX3cZk
+
+4. Fire SFX
+https://www.freesoundeffects.com/free-track/fire2-89307/
+
+5. Sand Falling SFX
+http://www.freesfx.co.uk/soundeffects/dirt_sand/
