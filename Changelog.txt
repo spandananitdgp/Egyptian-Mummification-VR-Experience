@@ -42,11 +42,11 @@
 - Updated Readme.md to include accredition for flame and dirt SFX.
 
 
-*** Feb 16 
+*** 16th Feb, 2016
 - Added PS4 Controls for Navigation & Interaction
 	(Source: http://postimg.org/image/s3nazp8bn/)
 - Removed the SkyboxMesh component (As it is not needed in Unity 5)
 - Added Two Cardbard Audio Plugins:
 	- Assets -> Plugins -> x86 -> audiopluginvrunity.dll
 	- Assets -> Plugins -> x86_64 -> audiopluginvrunity.dll
-- 
+- Disabled Jump
