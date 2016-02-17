@@ -50,3 +50,11 @@
 	- Assets -> Plugins -> x86 -> audiopluginvrunity.dll
 	- Assets -> Plugins -> x86_64 -> audiopluginvrunity.dll
 - Disabled Jump
+
+***
+- Added mouse squeaks audio.
+
+- Added script to play squeaking sound dynamically based on player position.
+
+- Updated Readme.md
+- Added #.dll in .gitignore
