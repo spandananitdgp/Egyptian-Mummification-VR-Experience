@@ -53,8 +53,11 @@
 
 ***
 - Added mouse squeaks audio.
-
 - Added script to play squeaking sound dynamically based on player position.
-
 - Updated Readme.md
 - Added #.dll in .gitignore
+
+**** 17th Feb, 2016
+- Created Corridor_wall prefab
+- Added walls to all the possible places
+- Removed extra alligator
