@@ -61,3 +61,7 @@
 - Created Corridor_wall prefab
 - Added walls to all the possible places
 - Removed extra alligator
+
+**** 17th Feb, 2016
+- Added new scene (exterior of pyramid)
+- human body prefab
