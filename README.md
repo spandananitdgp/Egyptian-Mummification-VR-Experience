@@ -17,3 +17,6 @@ https://www.freesoundeffects.com/free-track/fire2-89307/
 
 5. Sand Falling SFX
 http://www.freesfx.co.uk/soundeffects/dirt_sand/
+
+6. Mouse Squeak SFX
+https://www.youtube.com/watch?v=oTWI_k7jhC8

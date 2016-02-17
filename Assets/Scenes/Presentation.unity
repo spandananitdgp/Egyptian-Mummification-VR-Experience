@@ -9417,7 +9417,7 @@ MonoBehaviour:
   sourceLoop: 1
   sourceMute: 0
   sourcePitch: 1
-  sourceVolume: .0299999993
+  sourceVolume: .0500000007
   sourceMaxDistance: 10
   sourceMinDistance: 0
   hrtfEnabled: 1
@@ -13903,6 +13903,72 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 376106630}
   m_Mesh: {fileID: 4300000, guid: 3d1fceefc7be59f4e83d373ff5d5994d, type: 3}
+--- !u!1 &377256539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 377256542}
+  - 114: {fileID: 377256541}
+  - 114: {fileID: 377256540}
+  m_Layer: 0
+  m_Name: RatSounds3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &377256540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 377256539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddab9f8d97813e54cbad6047f3d02a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thePlayer: {fileID: 833539085}
+--- !u!114 &377256541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 377256539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dbca64e524ea44f9b26142ec59aca8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directivityAlpha: 0
+  directivitySharpness: 1
+  gainDb: 0
+  occlusionEnabled: 0
+  playOnAwake: 0
+  rolloffMode: 1
+  sourceClip: {fileID: 8300000, guid: dcd784afec4aa8e4fa5100587ff261e7, type: 3}
+  sourceLoop: 0
+  sourceMute: 0
+  sourcePitch: 1
+  sourceVolume: 1
+  sourceMaxDistance: 20
+  sourceMinDistance: 1
+  hrtfEnabled: 1
+--- !u!4 &377256542
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 377256539}
+  m_LocalRotation: {x: 0, y: .105561748, z: 0, w: -.99441278}
+  m_LocalPosition: {x: -6.90999985, y: .400000006, z: -22}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
 --- !u!1001 &378384588
 Prefab:
   m_ObjectHideFlags: 0
@@ -19498,7 +19564,7 @@ MonoBehaviour:
   sourceLoop: 1
   sourceMute: 0
   sourcePitch: 1
-  sourceVolume: .0299999993
+  sourceVolume: .0399999991
   sourceMaxDistance: 10
   sourceMinDistance: 0
   hrtfEnabled: 1
@@ -23247,7 +23313,7 @@ MonoBehaviour:
   sourceLoop: 1
   sourceMute: 0
   sourcePitch: 1
-  sourceVolume: .0299999993
+  sourceVolume: .0399999991
   sourceMaxDistance: 10
   sourceMinDistance: 0
   hrtfEnabled: 1
@@ -23361,7 +23427,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 29
 --- !u!95 &645094923
 Animator:
   serializedVersion: 3
@@ -24213,7 +24279,7 @@ Transform:
   m_Children:
   - {fileID: 426006010}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 23
 --- !u!95 &674402292
 Animator:
   serializedVersion: 3
@@ -28175,7 +28241,7 @@ MonoBehaviour:
   sourceLoop: 1
   sourceMute: 0
   sourcePitch: 1
-  sourceVolume: .0299999993
+  sourceVolume: .0399999991
   sourceMaxDistance: 10
   sourceMinDistance: 0
   hrtfEnabled: 1
@@ -30078,7 +30144,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
-  soundVolume: .00999999978
+  soundVolume: .0399999991
 --- !u!143 &833539091
 CharacterController:
   m_ObjectHideFlags: 0
@@ -30090,7 +30156,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.79999995
+  m_Height: 2.5999999
   m_Radius: .5
   m_SlopeLimit: 45
   m_StepOffset: .300000012
@@ -31767,6 +31833,72 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 884857718}
   m_Mesh: {fileID: 4300076, guid: e9026480281697443ac112e8b405ca04, type: 3}
+--- !u!1 &890252932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 890252934}
+  - 114: {fileID: 890252933}
+  - 114: {fileID: 890252935}
+  m_Layer: 0
+  m_Name: RatSounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &890252933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 890252932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dbca64e524ea44f9b26142ec59aca8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directivityAlpha: 0
+  directivitySharpness: 1
+  gainDb: 0
+  occlusionEnabled: 0
+  playOnAwake: 0
+  rolloffMode: 1
+  sourceClip: {fileID: 8300000, guid: dcd784afec4aa8e4fa5100587ff261e7, type: 3}
+  sourceLoop: 0
+  sourceMute: 0
+  sourcePitch: 1
+  sourceVolume: 1
+  sourceMaxDistance: 20
+  sourceMinDistance: 1
+  hrtfEnabled: 1
+--- !u!4 &890252934
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 890252932}
+  m_LocalRotation: {x: 0, y: .998540938, z: 0, w: .0540004335}
+  m_LocalPosition: {x: 1.08000004, y: .400000006, z: -2.67000008}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 36
+--- !u!114 &890252935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 890252932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddab9f8d97813e54cbad6047f3d02a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thePlayer: {fileID: 833539085}
 --- !u!1 &890507898
 GameObject:
   m_ObjectHideFlags: 0
@@ -32250,7 +32382,7 @@ Transform:
   m_LocalScale: {x: 7.10777426, y: 7.10777664, z: 7.10777664}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 35
 --- !u!1001 &913429700
 Prefab:
   m_ObjectHideFlags: 0
@@ -35021,7 +35153,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 17
 --- !u!95 &972854493
 Animator:
   serializedVersion: 3
@@ -36548,7 +36680,7 @@ Transform:
   - {fileID: 102972982}
   - {fileID: 1552406992}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 14
 --- !u!1 &1016183864
 GameObject:
   m_ObjectHideFlags: 0
@@ -38664,7 +38796,7 @@ MonoBehaviour:
   sourceLoop: 1
   sourceMute: 0
   sourcePitch: 1
-  sourceVolume: .0299999993
+  sourceVolume: .0399999991
   sourceMaxDistance: 10
   sourceMinDistance: 0
   hrtfEnabled: 1
@@ -50770,7 +50902,7 @@ Transform:
   - {fileID: 1078778409}
   - {fileID: 833539086}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 26
 --- !u!114 &1408089947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54935,7 +55067,7 @@ MonoBehaviour:
   sourceLoop: 1
   sourceMute: 0
   sourcePitch: 1
-  sourceVolume: .0299999993
+  sourceVolume: .0500000007
   sourceMaxDistance: 10
   sourceMinDistance: 0
   hrtfEnabled: 1
@@ -56855,6 +56987,72 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1599304796}
   m_Mesh: {fileID: 4300000, guid: 3d1fceefc7be59f4e83d373ff5d5994d, type: 3}
+--- !u!1 &1599323070
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1599323073}
+  - 114: {fileID: 1599323072}
+  - 114: {fileID: 1599323071}
+  m_Layer: 0
+  m_Name: RatSounds4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1599323071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1599323070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddab9f8d97813e54cbad6047f3d02a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thePlayer: {fileID: 833539085}
+--- !u!114 &1599323072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1599323070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dbca64e524ea44f9b26142ec59aca8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directivityAlpha: 0
+  directivitySharpness: 1
+  gainDb: 0
+  occlusionEnabled: 0
+  playOnAwake: 0
+  rolloffMode: 1
+  sourceClip: {fileID: 8300000, guid: dcd784afec4aa8e4fa5100587ff261e7, type: 3}
+  sourceLoop: 0
+  sourceMute: 0
+  sourcePitch: 1
+  sourceVolume: 1
+  sourceMaxDistance: 20
+  sourceMinDistance: 1
+  hrtfEnabled: 1
+--- !u!4 &1599323073
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1599323070}
+  m_LocalRotation: {x: 0, y: .359997123, z: 0, w: -.932953417}
+  m_LocalPosition: {x: -21.3999996, y: .400000006, z: -12.5900002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
 --- !u!1 &1602443786
 GameObject:
   m_ObjectHideFlags: 0
@@ -60015,7 +60213,7 @@ MonoBehaviour:
   sourceLoop: 1
   sourceMute: 0
   sourcePitch: 1
-  sourceVolume: .0299999993
+  sourceVolume: .0399999991
   sourceMaxDistance: 10
   sourceMinDistance: 0
   hrtfEnabled: 1
@@ -60286,6 +60484,72 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1128101022}
   m_RootOrder: 0
+--- !u!1 &1699717501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1699717504}
+  - 114: {fileID: 1699717503}
+  - 114: {fileID: 1699717502}
+  m_Layer: 0
+  m_Name: RatSounds2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1699717502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1699717501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddab9f8d97813e54cbad6047f3d02a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thePlayer: {fileID: 833539085}
+--- !u!114 &1699717503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1699717501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dbca64e524ea44f9b26142ec59aca8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directivityAlpha: 0
+  directivitySharpness: 1
+  gainDb: 0
+  occlusionEnabled: 0
+  playOnAwake: 0
+  rolloffMode: 1
+  sourceClip: {fileID: 8300000, guid: dcd784afec4aa8e4fa5100587ff261e7, type: 3}
+  sourceLoop: 0
+  sourceMute: 0
+  sourcePitch: 1
+  sourceVolume: 1
+  sourceMaxDistance: 20
+  sourceMinDistance: 1
+  hrtfEnabled: 1
+--- !u!4 &1699717504
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1699717501}
+  m_LocalRotation: {x: 0, y: .706702888, z: 0, w: -.707510412}
+  m_LocalPosition: {x: .50999999, y: .400000006, z: -13.1300001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
 --- !u!1 &1705964714
 GameObject:
   m_ObjectHideFlags: 0
