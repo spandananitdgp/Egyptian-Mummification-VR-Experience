@@ -2,8 +2,11 @@
 
 This is a project for Virtual Reality (Spring 2016) class at University of Florida.
 The team consists of 3 graduate students:
+
 1. Izhar Shaikh (https://github.com/its-izhar)
+
 2. Sayak Biswas (https://github.com/sayakbiswas)
+
 3. Spandana Gangisetty (https://github.com/spandananitdgp)
 
 # References
