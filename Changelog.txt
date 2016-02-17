@@ -1,0 +1,52 @@
+***
+- Imported Egyptian Tomb Asset, Medieval props & Cardboard SDK
+- Added Cardboard Camera
+- Added colliders and walls
+- Added FPS Controller
+- Added Audios for Fire, Chants and Sand
+- Removed few torches in mummification room.
+- Added table and a few props from medieval props asset pack
+
+
+***
+- Added CardboardReticle in the scene
+- Changed Edit > Project Settings > Audio > Spatializer Plugin to Cardboard Audio
+- Created a folder Audio in Assets and added some audio files
+- Updated Readme.md to add audio accredition
+- Added Cardboard Audio Listener to FPSController > Main Camera
+- Added Cardboard Audio Source in Mummification Room
+- Changed FirstPersonController.cs to display a field in editor to control the volume of footsteps, jump and landing sounds.
+
+
+***
+- Created Scripts Folder.
+- Added Flame SFX to all torches.
+- Added Dirt falling SFX to sandfalls.
+- Created SandAudio.cs script to sync audio looping with the visual effect.
+- Updated Readme.md to include accredition for flame and dirt SFX.
+
+
+***
+- Created Scripts Folder.
+- Added Flame SFX to all torches.
+- Added Dirt falling SFX to sandfalls.
+- Created SandAudio.cs script to sync audio looping with the visual effect.
+- Updated Readme.md to include accredition for flame and dirt SFX.
+
+
+***
+- Created Scripts Folder.
+- Added Flame SFX to all torches.
+- Added Dirt falling SFX to sandfalls.
+- Created SandAudio.cs script to sync audio looping with the visual effect.
+- Updated Readme.md to include accredition for flame and dirt SFX.
+
+
+*** Feb 16 
+- Added PS4 Controls for Navigation & Interaction
+	(Source: http://postimg.org/image/s3nazp8bn/)
+- Removed the SkyboxMesh component (As it is not needed in Unity 5)
+- Added Two Cardbard Audio Plugins:
+	- Assets -> Plugins -> x86 -> audiopluginvrunity.dll
+	- Assets -> Plugins -> x86_64 -> audiopluginvrunity.dll
+- 
