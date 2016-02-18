@@ -32,5 +32,14 @@ http://postimg.org/image/s3nazp8bn/
 7. Mouse Squeak SFX
 https://www.youtube.com/watch?v=oTWI_k7jhC8
 
-8. Props for the Classroom
+8. Makehuman Skin 
+http://o4saken.deviantart.com/art/Make-human-detailed-skin-573978821
+
+9. Brain Model
+http://www.turbosquid.com/3d-models/brain-max-free/833681
+
+10. Lung Model
+http://opengameart.org/content/human-lungs
+
+11. Props for the Classroom
 https://www.assetstore.unity3d.com/en/#!/content/5977
