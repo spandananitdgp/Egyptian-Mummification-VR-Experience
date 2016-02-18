@@ -73,3 +73,6 @@
 **** 17th Feb, 2016
 - Added Lab scene (Classroom scene) [Beta]
 - Added CardboardMain & FPS Controller to the LAB Scene
+
+**** 18th Feb, 2016
+- Added script to change the shader of body for transparency
