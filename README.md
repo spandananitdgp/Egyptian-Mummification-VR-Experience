@@ -40,3 +40,6 @@ http://www.turbosquid.com/3d-models/brain-max-free/833681
 
 10. Lung Model
 http://opengameart.org/content/human-lungs
+
+11. Props for the Classroom
+https://www.assetstore.unity3d.com/en/#!/content/5977

@@ -69,3 +69,7 @@
 **** 17th Feb, 2016
 - Positioned the human body in the scene
 - Added brain and lung models inside the body
+
+**** 17th Feb, 2016
+- Added Lab scene (Classroom scene) [Beta]
+- Added CardboardMain & FPS Controller to the LAB Scene
