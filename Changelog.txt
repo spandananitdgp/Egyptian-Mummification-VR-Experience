@@ -65,3 +65,5 @@
 **** 17th Feb, 2016
 - Added new scene (exterior of pyramid)
 - human body prefab
+- Added Lab scene (Classroom scene) [Beta]
+- Added CardboardMain & FPS Controller to the LAB Scene
