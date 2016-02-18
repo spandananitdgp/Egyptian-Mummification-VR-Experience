@@ -65,3 +65,7 @@
 **** 17th Feb, 2016
 - Added new scene (exterior of pyramid)
 - human body prefab
+
+**** 17th Feb, 2016
+- Positioned the human body in the scene
+- Added brain and lung models inside the body

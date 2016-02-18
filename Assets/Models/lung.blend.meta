@@ -1,0 +1,112 @@
+fileFormatVersion: 2
+guid: 990a8cdb393c1e847a0fad0a1afa5077
+timeCreated: 1455771190
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Bone
+    100002: Bone_0
+    100004: Bone_001
+    100006: Bone_002
+    100008: Bone_1
+    100010: Bone_2
+    100012: Bone_3
+    100014: Bone_4
+    100016: bone_L
+    100018: bone_R
+    100020: //RootNode
+    100022: Lung_L
+    100024: Lung_R
+    100026: Trachea
+    100028: Trachea_bone
+    400000: Bone
+    400002: Bone_0
+    400004: Bone_001
+    400006: Bone_002
+    400008: Bone_1
+    400010: Bone_2
+    400012: Bone_3
+    400014: Bone_4
+    400016: bone_L
+    400018: bone_R
+    400020: //RootNode
+    400022: Lung_L
+    400024: Lung_R
+    400026: Trachea
+    400028: Trachea_bone
+    4300000: Lung_R
+    4300002: Lung_L
+    4300004: Trachea
+    7400000: Default Take
+    7400002: bone_LAction
+    7400004: bone_RAction
+    7400006: Trachea_boneAction
+    9500000: //RootNode
+    13700000: Lung_L
+    13700002: Lung_R
+    13700004: Trachea
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
