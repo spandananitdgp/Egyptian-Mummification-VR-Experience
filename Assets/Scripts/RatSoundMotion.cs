@@ -23,7 +23,7 @@ public class RatSoundMotion : MonoBehaviour {
 			soundSource.Play();
 			isMoving = true;
 		}
-		Debug.Log("isMoving for " + this.gameObject.name + " = " + isMoving);
+		//Debug.Log("isMoving for " + this.gameObject.name + " = " + isMoving);
 		if (isMoving) {
 			transform.Translate (Vector3.forward * Time.deltaTime * 10.0f);
 		}
