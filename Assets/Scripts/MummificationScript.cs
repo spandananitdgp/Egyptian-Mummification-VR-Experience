@@ -64,7 +64,7 @@ public class MummificationScript : MonoBehaviour {
 		RaycastHit hitInfo;
 		GameObject objectInHand = null;
 		//Debug.DrawRay(mainCamera.transform.position, mainCamera.transform.rotation * Vector3.forward);
-		if(Physics.Raycast(new Ray(mainCamera.transform.position, mainCamera.transform.rotation * Vector3.forward), out hitInfo)) {
+		if(Physics.Raycast(Cardboard.SDK.GetComponentInChildren<CardboardHead>().Gaze, out hitInfo)) {
 			//Debug.Log("Hit something " + hitInfo.transform.name);
 			if(hitInfo.transform.gameObject.tag == "Pickable") {
 				//Debug.Log("Object Picked");

@@ -82,3 +82,6 @@
 
 **** 19th Feb, 2016
 - Changes to mummification script
+
+**** 19th Feb, 2016
+- Fix in mummification script for picking issue.
