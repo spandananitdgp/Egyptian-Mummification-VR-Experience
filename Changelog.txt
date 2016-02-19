@@ -85,3 +85,8 @@
 
 **** 19th Feb, 2016
 - Fix in mummification script for picking issue.
+
+**** 19th Feb, 2016
+- Added heart, intestines.
+- Changes in mummification script.
+- Updated Readme.md.

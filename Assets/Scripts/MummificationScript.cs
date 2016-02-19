@@ -13,6 +13,8 @@ public class MummificationScript : MonoBehaviour {
 	private GameObject knifeInHand;
 	private bool isObjectInHand = false;
 	private bool isBrainPicked = false;
+	private bool areLungsPicked = false;
+	private bool areIntestinesPicked = false;
 	private GameObject objectInHand;
 
 	// Use this for initialization
@@ -74,6 +76,12 @@ public class MummificationScript : MonoBehaviour {
 					if(pickableObject.name.Contains("Brain")) {
 						isBrainPicked = true;
 					}
+					if(pickableObject.name.Contains("lung")) {
+						areLungsPicked = true;
+					}
+					if(pickableObject.name.Contains("Intestine")) {
+						areIntestinesPicked = true;
+					}
 					isObjectInHand = true;
 					isKnifePicked = false;
 				} else {
@@ -89,6 +97,10 @@ public class MummificationScript : MonoBehaviour {
 				Debug.Log("Object in Hand :: " + objectPickedInHand.name);
 				objectPickedInHand.SetActive(true);
 				objectInHand = objectPickedInHand;
+			} else if(hitInfo.transform.gameObject.tag == "Unpickable") {
+				if(hitInfo.transform.name == "Heart") {
+					Debug.Log ("No! We must keep the heart with the body."); //TODO: Play Audio here.
+				}
 			}
 		}
 
@@ -99,6 +111,8 @@ public class MummificationScript : MonoBehaviour {
 		GameObject basketedObject = basketedGameObjectsReference[objectInHand.name.Replace("inHand", "inBasket")];
 		basketedObject.SetActive (true);
 		Destroy (objectInHand);
+		knifeInHand.SetActive (true);
 		isKnifePicked = true;
+		isObjectInHand = false;
 	}
 }
