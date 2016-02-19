@@ -7,14 +7,17 @@ public class MummificationScript : MonoBehaviour {
 	public Camera mainCamera;
 	private Dictionary<string, GameObject> gameObjectsInHandReference;
 	private Dictionary<string, GameObject> pickableGameObjectsReference;
+	private Dictionary<string, GameObject> basketedGameObjectsReference;
 	private bool isKnifePicked = false;
 	private Transform knifeInHandOriginalTransform;
 	private GameObject knifeInHand;
 	private bool isObjectInHand = false;
 	private bool isBrainPicked = false;
+	private GameObject objectInHand;
 
 	// Use this for initialization
 	void Start () {
+		objectInHand = null;
 		GameObject[] gameObjectsInHand = GameObject.FindGameObjectsWithTag ("Picked");
 		gameObjectsInHandReference = new Dictionary<string, GameObject> ();
 		foreach (GameObject gameObject in gameObjectsInHand) {
@@ -27,12 +30,18 @@ public class MummificationScript : MonoBehaviour {
 		foreach (GameObject gameObject in pickableGameObjects) {
 			pickableGameObjectsReference.Add(gameObject.name, gameObject);
 		}
+
+		GameObject[] basketedGameObjects = GameObject.FindGameObjectsWithTag ("Basketed");
+		basketedGameObjectsReference = new Dictionary<string, GameObject> ();
+		foreach (GameObject gameObject in basketedGameObjects) {
+			basketedGameObjectsReference.Add(gameObject.name, gameObject);
+			gameObject.SetActive(false);
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetButtonDown("Fire1")) {
-			GameObject objectInHand = null;
 			if (isKnifePicked) {
 				knifeInHand = gameObjectsInHandReference["KnifeV1inHand"];
 				knifeInHandOriginalTransform = knifeInHand.transform;
@@ -66,6 +75,7 @@ public class MummificationScript : MonoBehaviour {
 						isBrainPicked = true;
 					}
 					isObjectInHand = true;
+					isKnifePicked = false;
 				} else {
 					if(pickableObject.name.Contains("Knife")) {
 						isKnifePicked = true;
@@ -86,12 +96,9 @@ public class MummificationScript : MonoBehaviour {
 	}
 
 	void dropObject(GameObject objectInHand) {
-		RaycastHit hitInfo;
-		if (Physics.Raycast (new Ray (mainCamera.transform.position, mainCamera.transform.rotation * Vector3.forward), out hitInfo)) {
-			Debug.Log("Hit Object :: " + hitInfo.transform.name);
-			if(hitInfo.transform.gameObject.tag == "Dropbasket") {
-				objectInHand.transform.position = hitInfo.point;
-			}
-		}
+		GameObject basketedObject = basketedGameObjectsReference[objectInHand.name.Replace("inHand", "inBasket")];
+		basketedObject.SetActive (true);
+		Destroy (objectInHand);
+		isKnifePicked = true;
 	}
 }
