@@ -76,3 +76,6 @@
 
 **** 18th Feb, 2016
 - Added script to change the shader of body for transparency
+
+**** 18th Feb, 2016
+- Added script to for the mummification process(WIP)
