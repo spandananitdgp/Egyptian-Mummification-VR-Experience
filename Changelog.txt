@@ -90,3 +90,9 @@
 - Added heart, intestines.
 - Changes in mummification script.
 - Updated Readme.md.
+
+**** 19th Feb, 2016
+- Changes to mummification script
+	- Mummification process upto salting completed
+	- Body becomes opaque again after all organs are removed
+- Removed ChangeBodyTransparency script and moved its contents to Mummification script
