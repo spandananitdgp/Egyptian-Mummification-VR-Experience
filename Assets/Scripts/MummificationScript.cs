@@ -16,6 +16,14 @@ public class MummificationScript : MonoBehaviour {
 	private bool areLungsPicked = false;
 	private bool areIntestinesPicked = false;
 	private GameObject objectInHand;
+	private bool areInternalOrgansRemoved = false;
+	private bool isPotPicked = false;
+	private GameObject saltOnTable;
+	public GameObject thePlayer;
+	public GameObject theBody;
+	public Texture transparentTexture;
+	public Texture normalTexture;
+	private bool isBodyTransparent = false;
 
 	// Use this for initialization
 	void Start () {
@@ -39,11 +47,31 @@ public class MummificationScript : MonoBehaviour {
 			basketedGameObjectsReference.Add(gameObject.name, gameObject);
 			gameObject.SetActive(false);
 		}
+
+		saltOnTable = GameObject.Find ("SaltOnTable");
+		saltOnTable.SetActive (false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (!isBodyTransparent) {
+			float distanceBetweenPlayerAndBody = Vector3.Distance (thePlayer.transform.position, theBody.transform.position);
+			if (distanceBetweenPlayerAndBody <= 5.0f) {
+				//Debug.Log("Change Transparency");
+				Material material = new Material (Shader.Find ("Legacy Shaders/Transparent/Diffuse"));
+				material.mainTexture = transparentTexture;
+				theBody.GetComponent<SkinnedMeshRenderer> ().material = material;
+				isBodyTransparent = true;
+			}
+		}
+
 		if (Input.GetButtonDown("Fire1")) {
+			if (isBodyTransparent && areInternalOrgansRemoved) {
+				Material material = new Material (Shader.Find ("Mobile/Diffuse"));
+				material.mainTexture = normalTexture;
+				theBody.GetComponent<SkinnedMeshRenderer> ().material = material;
+			}
+
 			if (isKnifePicked) {
 				knifeInHand = gameObjectsInHandReference["KnifeV1inHand"];
 				knifeInHandOriginalTransform = knifeInHand.transform;
@@ -55,7 +83,12 @@ public class MummificationScript : MonoBehaviour {
 			} else {
 				if(objectInHand != null) {
 					Debug.Log("Dropping Object");
-					dropObject(objectInHand);
+					if(objectInHand.name.Contains("Pot")) {
+						pourSalt();
+						dropObject(objectInHand);
+					} else {
+						dropObject(objectInHand);
+					}
 				}
 			}
 		}
@@ -87,7 +120,10 @@ public class MummificationScript : MonoBehaviour {
 				} else {
 					if(pickableObject.name.Contains("Knife")) {
 						isKnifePicked = true;
-					} else {
+					} else if(pickableObject.name.Contains("Pot")) {
+						isPotPicked = true;
+					}
+					else {
 						Debug.Log("Please pick up the knife first!"); //TODO: Play Audio here.
 					}
 				}
@@ -108,11 +144,25 @@ public class MummificationScript : MonoBehaviour {
 	}
 
 	void dropObject(GameObject objectInHand) {
-		GameObject basketedObject = basketedGameObjectsReference[objectInHand.name.Replace("inHand", "inBasket")];
-		basketedObject.SetActive (true);
+		if (objectInHand.name.Contains ("Pot")) {
+			GameObject saltPot = pickableGameObjectsReference[objectInHand.name.Replace("inHand", "")];
+			saltPot.SetActive(true);
+		} else {
+			GameObject basketedObject = basketedGameObjectsReference[objectInHand.name.Replace("inHand", "inBasket")];
+			basketedObject.SetActive (true);
+		}
 		Destroy (objectInHand);
 		knifeInHand.SetActive (true);
 		isKnifePicked = true;
 		isObjectInHand = false;
+
+		if (isBrainPicked && areLungsPicked && areIntestinesPicked) {
+			areInternalOrgansRemoved = true;
+			Debug.Log("Good! Now pour the salt from the pot on the body."); //TODO: Play Audio here.
+		}
+	}
+
+	void pourSalt() {
+		saltOnTable.SetActive (true);
 	}
 }
