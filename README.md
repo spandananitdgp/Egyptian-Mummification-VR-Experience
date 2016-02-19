@@ -43,3 +43,9 @@ http://opengameart.org/content/human-lungs
 
 11. Props for the Classroom
 https://www.assetstore.unity3d.com/en/#!/content/5977
+
+12. Intestines
+http://3dlancer.net/en/3dmodel-the-intestines-4883
+
+13. Heart
+http://www.turbosquid.com/FullPreview/Index.cfm/ID/791469

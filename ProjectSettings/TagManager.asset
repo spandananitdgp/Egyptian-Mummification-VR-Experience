@@ -8,6 +8,7 @@ TagManager:
   - Picked
   - Dropbasket
   - Basketed
+  - Unpickable
   layers:
   - Default
   - TransparentFX
