@@ -96,3 +96,7 @@
 	- Mummification process upto salting completed
 	- Body becomes opaque again after all organs are removed
 - Removed ChangeBodyTransparency script and moved its contents to Mummification script
+
+**** 19th Feb, 2016
+- Added sound effects and made design changes to pyramid.unity
+- Added texture for body wrapped in linen stage of mummification process
