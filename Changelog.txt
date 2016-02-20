@@ -100,3 +100,6 @@
 **** 19th Feb, 2016
 - Added sound effects and made design changes to pyramid.unity
 - Added texture for body wrapped in linen stage of mummification process
+
+**** 20th Feb, 2016
+- Mummification process upto mummy wrapping conpleted.

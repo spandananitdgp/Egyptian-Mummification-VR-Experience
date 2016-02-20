@@ -24,6 +24,7 @@ public class MummificationScript : MonoBehaviour {
 	public Texture transparentTexture;
 	public Texture normalTexture;
 	private bool isBodyTransparent = false;
+	public Texture mummyTexture;
 
 	// Use this for initialization
 	void Start () {
@@ -86,6 +87,9 @@ public class MummificationScript : MonoBehaviour {
 					if(objectInHand.name.Contains("Pot")) {
 						pourSalt();
 						dropObject(objectInHand);
+					} else if(objectInHand.name.Contains("roll")) {
+						mummify();
+						dropObject(objectInHand);
 					} else {
 						dropObject(objectInHand);
 					}
@@ -147,12 +151,19 @@ public class MummificationScript : MonoBehaviour {
 		if (objectInHand.name.Contains ("Pot")) {
 			GameObject saltPot = pickableGameObjectsReference[objectInHand.name.Replace("inHand", "")];
 			saltPot.SetActive(true);
+			Destroy (objectInHand);
+			knifeInHand.SetActive (false);
+		} else if(objectInHand.name.Contains ("roll")) {
+			GameObject roll = pickableGameObjectsReference[objectInHand.name.Replace("inHand", "")];
+			roll.SetActive(true);
+			Destroy (objectInHand);
+			knifeInHand.SetActive (false);
 		} else {
 			GameObject basketedObject = basketedGameObjectsReference[objectInHand.name.Replace("inHand", "inBasket")];
 			basketedObject.SetActive (true);
+			Destroy (objectInHand);
+			knifeInHand.SetActive (true);
 		}
-		Destroy (objectInHand);
-		knifeInHand.SetActive (true);
 		isKnifePicked = true;
 		isObjectInHand = false;
 
@@ -164,5 +175,13 @@ public class MummificationScript : MonoBehaviour {
 
 	void pourSalt() {
 		saltOnTable.SetActive (true);
+		Debug.Log ("Now take the resin dipped linen strips and wrap the body."); //TODO: Play Audio here.
+	}
+
+	void mummify() {
+		Material material = new Material (Shader.Find ("Mobile/Diffuse"));
+		material.mainTexture = mummyTexture;
+		material.mainTextureScale = new Vector2 (5.0f, 5.0f);
+		theBody.GetComponent<SkinnedMeshRenderer> ().material = material;
 	}
 }
