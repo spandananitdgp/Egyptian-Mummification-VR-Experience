@@ -25,9 +25,25 @@ public class MummificationScript : MonoBehaviour {
 	public Texture normalTexture;
 	private bool isBodyTransparent = false;
 	public Texture mummyTexture;
+	private bool isBodyMummified = false;
+	private bool isBodyPickable = false;
+	private bool isBodyPicked = false;
+	private Material mummyTextureMaterial;
+	public GameObject sarcophagus;
+	private bool isSarcophagusLidOpen = false;
+	private bool isBodyInCoffin = false;
+	private bool isSarcophagusLidClosed = false;
 
 	// Use this for initialization
 	void Start () {
+		mummyTextureMaterial = new Material (Shader.Find ("Mobile/Diffuse"));
+		mummyTextureMaterial.mainTexture = mummyTexture;
+		mummyTextureMaterial.mainTextureScale = new Vector2 (5.0f, 5.0f);
+		GameObject bodyinHand = GameObject.Find ("humanbodyinHand/Mhx2sample:Body");
+		bodyinHand.GetComponent<SkinnedMeshRenderer> ().material = mummyTextureMaterial;
+		GameObject bodyinBasket = GameObject.Find ("humanbodyinBasket/Mhx2sample:Body");
+		bodyinBasket.GetComponent<SkinnedMeshRenderer> ().material = mummyTextureMaterial;
+
 		objectInHand = null;
 		GameObject[] gameObjectsInHand = GameObject.FindGameObjectsWithTag ("Picked");
 		gameObjectsInHandReference = new Dictionary<string, GameObject> ();
@@ -57,7 +73,7 @@ public class MummificationScript : MonoBehaviour {
 	void Update () {
 		if (!isBodyTransparent) {
 			float distanceBetweenPlayerAndBody = Vector3.Distance (thePlayer.transform.position, theBody.transform.position);
-			if (distanceBetweenPlayerAndBody <= 5.0f) {
+			if (distanceBetweenPlayerAndBody <= 3.0f) {
 				//Debug.Log("Change Transparency");
 				Material material = new Material (Shader.Find ("Legacy Shaders/Transparent/Diffuse"));
 				material.mainTexture = transparentTexture;
@@ -66,11 +82,23 @@ public class MummificationScript : MonoBehaviour {
 			}
 		}
 
+		if (isBodyMummified && !isBodyPickable) {
+			BoxCollider bodyCollider = theBody.transform.parent.gameObject.AddComponent<BoxCollider>();
+			bodyCollider.center = new Vector3(-0.09494729f, 5.081681f, 0.3331702f);
+			bodyCollider.size = new Vector3(2.831509f, 9.839473f, 1.66662f);
+			theBody.transform.parent.gameObject.tag = "Pickable";
+			isBodyPickable = true;
+		}
+
 		if (Input.GetButtonDown("Fire1")) {
 			if (isBodyTransparent && areInternalOrgansRemoved) {
 				Material material = new Material (Shader.Find ("Mobile/Diffuse"));
 				material.mainTexture = normalTexture;
 				theBody.GetComponent<SkinnedMeshRenderer> ().material = material;
+			}
+
+			if(isSarcophagusLidOpen && isBodyInCoffin) {
+				isSarcophagusLidClosed = sarcophagus.GetComponent<MoveSarcophagusLid>().closeSarcophagusLid();
 			}
 
 			if (isKnifePicked) {
@@ -90,9 +118,21 @@ public class MummificationScript : MonoBehaviour {
 					} else if(objectInHand.name.Contains("roll")) {
 						mummify();
 						dropObject(objectInHand);
+					} else if(objectInHand.name.Contains("body")) {
+						if(isSarcophagusLidOpen) {
+							dropObject(objectInHand);
+							Debug.Log("Now close the sarcophagus lid."); //TODO: Play Audio here.
+						}
 					} else {
 						dropObject(objectInHand);
 					}
+				}
+			}
+
+			if (isBodyPicked) {
+				float distanceBetweenPlayerAndSarcophagus = Vector3.Distance(thePlayer.transform.position, sarcophagus.transform.position);
+				if(distanceBetweenPlayerAndSarcophagus <= 3.0f) {
+					isSarcophagusLidOpen = sarcophagus.GetComponent<MoveSarcophagusLid>().openSarcophagusLid();
 				}
 			}
 		}
@@ -118,6 +158,9 @@ public class MummificationScript : MonoBehaviour {
 					}
 					if(pickableObject.name.Contains("Intestine")) {
 						areIntestinesPicked = true;
+					}
+					if(pickableObject.name.Contains("body")) {
+						isBodyPicked = true;
 					}
 					isObjectInHand = true;
 					isKnifePicked = false;
@@ -161,8 +204,13 @@ public class MummificationScript : MonoBehaviour {
 		} else {
 			GameObject basketedObject = basketedGameObjectsReference[objectInHand.name.Replace("inHand", "inBasket")];
 			basketedObject.SetActive (true);
+			if(objectInHand.name.Contains("body")) {
+				knifeInHand.SetActive (false);
+				isBodyInCoffin = true;
+			} else {
+				knifeInHand.SetActive (true);
+			}
 			Destroy (objectInHand);
-			knifeInHand.SetActive (true);
 		}
 		isKnifePicked = true;
 		isObjectInHand = false;
@@ -179,9 +227,8 @@ public class MummificationScript : MonoBehaviour {
 	}
 
 	void mummify() {
-		Material material = new Material (Shader.Find ("Mobile/Diffuse"));
-		material.mainTexture = mummyTexture;
-		material.mainTextureScale = new Vector2 (5.0f, 5.0f);
-		theBody.GetComponent<SkinnedMeshRenderer> ().material = material;
+		theBody.GetComponent<SkinnedMeshRenderer> ().material = mummyTextureMaterial;
+		isBodyMummified = true;
+		Debug.Log ("Now we put the mummy in the sarcophagus. Pick up the body and follow the directions."); //TODO: Play Audio here.
 	}
 }
