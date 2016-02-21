@@ -140,11 +140,13 @@ public class MummificationScript : MonoBehaviour {
 
 	GameObject pickObject() {
 		//Debug.Log ("isKnifePicked :: " + isKnifePicked);
+		int layerMask = 1 << 8;
+		layerMask = ~layerMask;
 		RaycastHit hitInfo;
 		GameObject objectInHand = null;
 		//Debug.DrawRay(mainCamera.transform.position, mainCamera.transform.rotation * Vector3.forward);
-		if(Physics.Raycast(Cardboard.SDK.GetComponentInChildren<CardboardHead>().Gaze, out hitInfo)) {
-			//Debug.Log("Hit something " + hitInfo.transform.name);
+		if(Physics.Raycast(Cardboard.SDK.GetComponentInChildren<CardboardHead>().Gaze, out hitInfo, Mathf.Infinity, layerMask)) {
+			Debug.Log("Hit something " + hitInfo.transform.name);
 			if(hitInfo.transform.gameObject.tag == "Pickable") {
 				//Debug.Log("Object Picked");
 				GameObject pickableObject = hitInfo.transform.gameObject;

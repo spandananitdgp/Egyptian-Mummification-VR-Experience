@@ -9054,7 +9054,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400016, guid: fa5856f56b6b8486db3965044162ad7c, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 238649039}
-  m_LocalRotation: {x: -.0145852929, y: -.676543891, z: .735959411, w: -.0209606681}
+  m_LocalRotation: {x: -.0145852864, y: -.676543891, z: .735959411, w: -.0209606681}
   m_LocalPosition: {x: .00288931909, y: .00242471462, z: -.0112152752}
   m_LocalScale: {x: 1, y: .999999762, z: 1}
   m_Children:
@@ -16687,7 +16687,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400016, guid: fa5856f56b6b8486db3965044162ad7c, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 402909451}
-  m_LocalRotation: {x: -.0145852948, y: -.676543951, z: .73595947, w: -.02096067}
+  m_LocalRotation: {x: -.0145852882, y: -.676543951, z: .73595947, w: -.02096067}
   m_LocalPosition: {x: .00288931909, y: .00242471462, z: -.0112152752}
   m_LocalScale: {x: 1, y: .999999762, z: 1}
   m_Children:
@@ -33935,7 +33935,7 @@ GameObject:
   - 54: {fileID: 833539089}
   - 82: {fileID: 833539088}
   - 114: {fileID: 833539087}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FPSController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73733,7 +73733,7 @@ Animator:
   m_GameObject: {fileID: 1853119239}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 959d554121739a240aed2d550746ee90, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -75721,7 +75721,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400016, guid: fa5856f56b6b8486db3965044162ad7c, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1931613919}
-  m_LocalRotation: {x: -.0145852929, y: -.676543891, z: .735959411, w: -.0209606681}
+  m_LocalRotation: {x: -.0145852864, y: -.676543891, z: .735959411, w: -.0209606681}
   m_LocalPosition: {x: .00288931909, y: .00242471462, z: -.0112152752}
   m_LocalScale: {x: 1, y: .999999762, z: 1}
   m_Children:
