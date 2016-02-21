@@ -49,3 +49,6 @@ http://3dlancer.net/en/3dmodel-the-intestines-4883
 
 13. Heart
 http://www.turbosquid.com/FullPreview/Index.cfm/ID/791469
+
+14. Sarcophagus Lid Slide Audio
+http://www.freesfx.co.uk/download/?type=mp3&id=3990

@@ -103,3 +103,9 @@
 
 **** 20th Feb, 2016
 - Mummification process upto mummy wrapping conpleted.
+
+**** 20th Feb, 2016
+- Mummification process script development completed.
+- Added new script MoveSarcophagusLid.cs
+- Added stone lid slide audio.
+- Updated Readme.md
