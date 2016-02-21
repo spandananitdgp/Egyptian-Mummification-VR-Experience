@@ -111,4 +111,7 @@
 - Updated Readme.md
 
 **** 21st Feb, 2016
+- Fixed issue with player sometimes not being able to pick anything after picking knife.
+
+**** 21st Feb, 2016
 - Added script for changing scene from pyramid to Presentation
