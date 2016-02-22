@@ -115,3 +115,7 @@
 
 **** 21st Feb, 2016
 - Added script for changing scene from pyramid to Presentation
+
+**** 21st Feb, 2016
+- Changed build target to Android
+- Removed audiopluginvrunity.dll from x86 folder to resolve build issue.
