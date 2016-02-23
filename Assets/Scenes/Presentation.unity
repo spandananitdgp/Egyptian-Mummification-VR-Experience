@@ -46778,9 +46778,10 @@ GameObject:
   - 4: {fileID: 1050255004}
   - 33: {fileID: 1050255006}
   - 23: {fileID: 1050255005}
+  - 64: {fileID: 1050255007}
   m_Layer: 0
   m_Name: Sarcofagus
-  m_TagString: Untagged
+  m_TagString: Dropbasket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46839,6 +46840,18 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1050255003}
+  m_Mesh: {fileID: 4300000, guid: f1f4cf7b943fc9b4da4e59fc1e0a6d29, type: 3}
+--- !u!64 &1050255007
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1050255003}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: f1f4cf7b943fc9b4da4e59fc1e0a6d29, type: 3}
 --- !u!1001 &1050539840
 Prefab:

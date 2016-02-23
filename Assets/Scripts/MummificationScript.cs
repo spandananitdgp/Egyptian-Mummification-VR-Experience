@@ -130,10 +130,12 @@ public class MummificationScript : MonoBehaviour {
 				}
 			}
 
-			if (isBodyPicked) {
+			if (isBodyPicked && !isBodyInCoffin) {
 				float distanceBetweenPlayerAndSarcophagus = Vector3.Distance(thePlayer.transform.position, sarcophagus.transform.position);
-				if(distanceBetweenPlayerAndSarcophagus <= 3.0f) {
-					isSarcophagusLidOpen = sarcophagus.GetComponent<MoveSarcophagusLid>().openSarcophagusLid();
+				if (distanceBetweenPlayerAndSarcophagus <= 4.0f) {
+					isSarcophagusLidOpen = sarcophagus.GetComponent<MoveSarcophagusLid> ().openSarcophagusLid ();
+				} else {
+					Debug.Log ("Move further up the stairs!"); //TODO: Play Audio here.
 				}
 			}
 		}
@@ -163,6 +165,8 @@ public class MummificationScript : MonoBehaviour {
 						if (!areInternalOrgansRemoved) {
 							Debug.Log ("You must remove the internal organs before pouring salt on the body!"); //TODO: Play Audio here.
 							return null;
+						} else {
+							isPotPicked = true;
 						}
 					}
 					if (pickableObject.name.Contains ("roll")) {
@@ -170,6 +174,7 @@ public class MummificationScript : MonoBehaviour {
 							Debug.Log ("You must remove the internal organs and pour salt on the body before wrapping it!"); //TODO: Play Audio here.
 							return null;
 						}
+						Debug.Log ("Is Pot picked? " + isPotPicked);
 						if (!isPotPicked) {
 							Debug.Log ("You must pour salt on the body before wrapping it in linen!"); //TODO: Play Audio here.
 							return null;
