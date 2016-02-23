@@ -1,0 +1,104 @@
+# Max2Mtl Version 4.0 Mar 10th, 2001
+#
+# Multi/Sub RenderStuff_CoolerMaster_case (12) to come 
+#
+newmtl Material__3
+Ka  0.0 0.0 0.0
+Kd  0.0 0.0 0.0
+Ks  0.0 0.0 0.0
+d  1.0
+Ns  0.0
+illum 2
+#
+newmtl Material__4
+Ka  0.0 0.0 0.0
+Kd  0.0 0.0 0.0
+Ks  0.0 0.0 0.0
+d  1.0
+Ns  0.0
+illum 2
+#
+newmtl Material__5
+Ka  0.0 0.0 0.0
+Kd  0.0 0.0 0.0
+Ks  0.0 0.0 0.0
+d  1.0
+Ns  0.0
+illum 2
+#
+newmtl Material__6
+Ka  0.0 0.0 0.0
+Kd  0.0 0.0 0.0
+Ks  0.0 0.0 0.0
+d  1.0
+Ns  0.0
+illum 2
+#
+newmtl back
+Ka  0.9 0.7 0.2
+Kd  0.9 0.7 0.2
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.0
+illum 2
+map_Kd RenderStuff_CoolerMaster_case_back.jpg
+#
+newmtl paint
+Ka  0.1 0.1 0.1
+Kd  0.1 0.1 0.1
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.6
+illum 2
+#
+newmtl Material__7
+Ka  0.0 0.0 0.0
+Kd  0.0 0.0 0.0
+Ks  0.0 0.0 0.0
+d  1.0
+Ns  0.0
+illum 2
+#
+newmtl Material__8
+Ka  0.0 0.0 0.0
+Kd  0.0 0.0 0.0
+Ks  0.0 0.0 0.0
+d  1.0
+Ns  0.0
+illum 2
+#
+newmtl Material__9
+Ka  0.0 0.0 0.0
+Kd  0.0 0.0 0.0
+Ks  0.0 0.0 0.0
+d  1.0
+Ns  0.0
+illum 2
+#
+newmtl Material__10
+Ka  0.0 0.0 0.0
+Kd  0.0 0.0 0.0
+Ks  0.0 0.0 0.0
+d  1.0
+Ns  0.0
+illum 2
+#
+newmtl Material__11
+Ka  0.0 0.0 0.0
+Kd  0.0 0.0 0.0
+Ks  0.0 0.0 0.0
+d  1.0
+Ns  0.0
+illum 2
+#
+newmtl RenderStuff.com
+Ka  0.6 0.6 0.6
+Kd  0.6 0.6 0.6
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.0
+illum 2
+#
+# Multi/Sub RenderStuff_CoolerMaster_case done 
+#
+# EOF

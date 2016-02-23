@@ -55,3 +55,28 @@ http://www.freesfx.co.uk/download/?type=mp3&id=3990
 
 15. Table Texture
 http://www.photos-public-domain.com/wp-content/uploads/2012/09/gray-heather-knit-t-shit-fabric-texture.jpg
+
+16. CPU Tower model
+http://tf3dm.com/download-page.php?url=coolermaster-pc-tower-78096
+
+17. Keyboard Model
+https://3dwarehouse.sketchup.com/model.html?id=bde7724c6a2c984d4c7427583b874cf1
+
+18. Mouse Model
+https://3dwarehouse.sketchup.com/model.html?id=90490d506c40f6b344ebbc705ad8c07
+
+19. Oculus Model
+https://sketchfab.com/models/591ff55a0f7b401cbb14fe454175b8b2
+
+20. Cardboard Model
+https://3dwarehouse.sketchup.com/model.html?id=u1cde2645-142f-4c6d-a8e5-3a49331aa2db
+
+21. Portal Texture
+http://www.stephenmeli.net/images/eventhorizon.jpg
+
+22. Simple Particle Ribbon
+https://www.assetstore.unity3d.com/en/#!/content/42866
+
+23. Portal sounds
+https://freesound.org/people/northern87/sounds/88532/
+https://freesound.org/people/Cyberkineticfilms/sounds/135435/
