@@ -134,3 +134,6 @@
 **** 23rd Feb, 2016
 - Added props and portal to lab scene
 - Added PortalOpen.cs
+
+**** 23rd Feb, 2016
+- Removed extra room in presentation scene
