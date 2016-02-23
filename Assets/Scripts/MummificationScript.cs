@@ -33,6 +33,7 @@ public class MummificationScript : MonoBehaviour {
 	private bool isSarcophagusLidOpen = false;
 	private bool isBodyInCoffin = false;
 	private bool isSarcophagusLidClosed = false;
+	public LayerMask layerMask;
 
 	// Use this for initialization
 	void Start () {
@@ -104,7 +105,7 @@ public class MummificationScript : MonoBehaviour {
 			if (isKnifePicked) {
 				knifeInHand = gameObjectsInHandReference["KnifeV1inHand"];
 				knifeInHandOriginalTransform = knifeInHand.transform;
-				Debug.Log("Please remove the brain."); //TODO: Play Audio here.
+				Debug.Log("Please remove the internal organs and put them in the basket beside you."); //TODO: Play Audio here.
 			}
 
 			if(!isObjectInHand) {
@@ -139,19 +140,13 @@ public class MummificationScript : MonoBehaviour {
 	}
 
 	GameObject pickObject() {
-		//Debug.Log ("isKnifePicked :: " + isKnifePicked);
-		int layerMask = 1 << 8;
-		layerMask = ~layerMask;
 		RaycastHit hitInfo;
 		GameObject objectInHand = null;
-		//Debug.DrawRay(mainCamera.transform.position, mainCamera.transform.rotation * Vector3.forward);
 		if(Physics.Raycast(Cardboard.SDK.GetComponentInChildren<CardboardHead>().Gaze, out hitInfo, Mathf.Infinity, layerMask)) {
 			Debug.Log("Hit something " + hitInfo.transform.name);
 			if(hitInfo.transform.gameObject.tag == "Pickable") {
-				//Debug.Log("Object Picked");
 				GameObject pickableObject = hitInfo.transform.gameObject;
 				if(isKnifePicked) {
-					knifeInHand.SetActive(false);
 					if(pickableObject.name.Contains("Brain")) {
 						isBrainPicked = true;
 					}
@@ -164,16 +159,44 @@ public class MummificationScript : MonoBehaviour {
 					if(pickableObject.name.Contains("body")) {
 						isBodyPicked = true;
 					}
+					if (pickableObject.name.Contains ("Pot")) {
+						if (!areInternalOrgansRemoved) {
+							Debug.Log ("You must remove the internal organs before pouring salt on the body!"); //TODO: Play Audio here.
+							return null;
+						}
+					}
+					if (pickableObject.name.Contains ("roll")) {
+						if (!areInternalOrgansRemoved) {
+							Debug.Log ("You must remove the internal organs and pour salt on the body before wrapping it!"); //TODO: Play Audio here.
+							return null;
+						}
+						if (!isPotPicked) {
+							Debug.Log ("You must pour salt on the body before wrapping it in linen!"); //TODO: Play Audio here.
+							return null;
+						}
+					}
+					knifeInHand.SetActive(false);
 					isObjectInHand = true;
 					isKnifePicked = false;
 				} else {
 					if(pickableObject.name.Contains("Knife")) {
 						isKnifePicked = true;
 					} else if(pickableObject.name.Contains("Pot")) {
-						isPotPicked = true;
+						if (areInternalOrgansRemoved) {
+							isPotPicked = true;
+						} else {
+							Debug.Log ("Please remove all the internal organs first!"); //TODO: Play Audio here.
+							return null;
+						}
+					} else if(pickableObject.name.Contains("roll")) {
+						if (!isPotPicked) {
+							Debug.Log ("Please pour salt on the body before wrapping the body!"); //TODO: Play Audio here.
+							return null;
+						}
 					}
 					else {
 						Debug.Log("Please pick up the knife first!"); //TODO: Play Audio here.
+						return null;
 					}
 				}
 
@@ -204,15 +227,25 @@ public class MummificationScript : MonoBehaviour {
 			Destroy (objectInHand);
 			knifeInHand.SetActive (false);
 		} else {
-			GameObject basketedObject = basketedGameObjectsReference[objectInHand.name.Replace("inHand", "inBasket")];
-			basketedObject.SetActive (true);
-			if(objectInHand.name.Contains("body")) {
-				knifeInHand.SetActive (false);
-				isBodyInCoffin = true;
-			} else {
-				knifeInHand.SetActive (true);
+			RaycastHit hitInfo;
+			if (Physics.Raycast (Cardboard.SDK.GetComponentInChildren<CardboardHead> ().Gaze, out hitInfo, Mathf.Infinity, layerMask)) {
+				Debug.Log("Hit something while dropping " + hitInfo.transform.name);
+				if (hitInfo.transform.tag == "Dropbasket") {
+					GameObject basketedObject = basketedGameObjectsReference [objectInHand.name.Replace ("inHand", "inBasket")];
+					basketedObject.SetActive (true);
+					if (objectInHand.name.Contains ("body")) {
+						knifeInHand.SetActive (false);
+						isBodyInCoffin = true;
+					} else {
+						knifeInHand.SetActive (true);
+					}
+					Destroy (objectInHand);
+				} else {
+					Debug.Log ("Put the organ in the basket beside you!"); //TODO: Play Audio here
+					return;
+				}
 			}
-			Destroy (objectInHand);
+
 		}
 		isKnifePicked = true;
 		isObjectInHand = false;
