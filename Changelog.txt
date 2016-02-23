@@ -138,3 +138,4 @@
 **** 23rd Feb, 2016
 - Tweaked Lab scene
 - Tweaked pyramid scene
+- Removed extra room in presentation scene
