@@ -134,3 +134,7 @@
 **** 23rd Feb, 2016
 - Added props and portal to lab scene
 - Added PortalOpen.cs
+
+**** 23rd Feb, 2016
+- Tweaked Lab scene
+- Tweaked pyramid scene
