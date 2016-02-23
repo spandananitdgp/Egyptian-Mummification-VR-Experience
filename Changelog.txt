@@ -130,3 +130,7 @@
 - Fixed issue with sarcophagus lid not closing completely and audio playing on every click
 - Changes to classroom scene
 - Updated Readme.md
+
+**** 23rd Feb, 2016
+- Added props and portal to lab scene
+- Added PortalOpen.cs
