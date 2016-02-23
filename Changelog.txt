@@ -123,3 +123,10 @@
 **** 22nd Feb, 2016
 - Changed layermask code in MummificationScript.cs
 - Added conditions in MummificationScript.cs to prevent the user from diverting from mummification sequence. Need to add audio cues in place of the debug statements in case users divert.
+
+**** 22nd Feb, 2016
+- Fixed issue in which player was unable to pick up linen wrap
+- Fixed issue with sarcophagus lid not opening
+- Fixed issue with sarcophagus lid not closing completely and audio playing on every click
+- Changes to classroom scene
+- Updated Readme.md
