@@ -148,9 +148,13 @@
 - Added portal in Presentation scene to go back to lab
 - Added ExitGame.cs
 
-**** 24th Feb, 2015
+**** 24th Feb, 2016
 - Changed other people scale
 - Put one person in gold room
 - Added chant in gold room
 - Body becomes transparent once player picks up knife
 - Portal doesn't appear until player starts moving
+
+**** 24th Feb,2016
+- Placed coffin_mummy in Lab scene
+- Removed a shiny ceiling in Presentation scene

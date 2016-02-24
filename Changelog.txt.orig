@@ -1,0 +1,146 @@
+***
+- Imported Egyptian Tomb Asset, Medieval props & Cardboard SDK
+- Added Cardboard Camera
+- Added colliders and walls
+- Added FPS Controller
+- Added Audios for Fire, Chants and Sand
+- Removed few torches in mummification room.
+- Added table and a few props from medieval props asset pack
+
+
+***
+- Added CardboardReticle in the scene
+- Changed Edit > Project Settings > Audio > Spatializer Plugin to Cardboard Audio
+- Created a folder Audio in Assets and added some audio files
+- Updated Readme.md to add audio accredition
+- Added Cardboard Audio Listener to FPSController > Main Camera
+- Added Cardboard Audio Source in Mummification Room
+- Changed FirstPersonController.cs to display a field in editor to control the volume of footsteps, jump and landing sounds.
+
+
+***
+- Created Scripts Folder.
+- Added Flame SFX to all torches.
+- Added Dirt falling SFX to sandfalls.
+- Created SandAudio.cs script to sync audio looping with the visual effect.
+- Updated Readme.md to include accredition for flame and dirt SFX.
+
+
+***
+- Created Scripts Folder.
+- Added Flame SFX to all torches.
+- Added Dirt falling SFX to sandfalls.
+- Created SandAudio.cs script to sync audio looping with the visual effect.
+- Updated Readme.md to include accredition for flame and dirt SFX.
+
+
+***
+- Created Scripts Folder.
+- Added Flame SFX to all torches.
+- Added Dirt falling SFX to sandfalls.
+- Created SandAudio.cs script to sync audio looping with the visual effect.
+- Updated Readme.md to include accredition for flame and dirt SFX.
+
+
+*** 16th Feb, 2016
+- Added PS4 Controls for Navigation & Interaction
+	(Source: http://postimg.org/image/s3nazp8bn/)
+- Removed the SkyboxMesh component (As it is not needed in Unity 5)
+- Added Two Cardbard Audio Plugins:
+	- Assets -> Plugins -> x86 -> audiopluginvrunity.dll
+	- Assets -> Plugins -> x86_64 -> audiopluginvrunity.dll
+- Disabled Jump
+
+***
+- Added mouse squeaks audio.
+- Added script to play squeaking sound dynamically based on player position.
+- Updated Readme.md
+- Added #.dll in .gitignore
+
+**** 17th Feb, 2016
+- Created Corridor_wall prefab
+- Added walls to all the possible places
+- Removed extra alligator
+
+**** 17th Feb, 2016
+- Added new scene (exterior of pyramid)
+- human body prefab
+
+**** 17th Feb, 2016
+- Positioned the human body in the scene
+- Added brain and lung models inside the body
+
+**** 17th Feb, 2016
+- Added Lab scene (Classroom scene) [Beta]
+- Added CardboardMain & FPS Controller to the LAB Scene
+
+**** 18th Feb, 2016
+- Added script to change the shader of body for transparency
+
+**** 18th Feb, 2016
+- Added script to for the mummification process(WIP)
+
+**** 19th Feb, 2016
+- Changes to mummification script
+
+**** 19th Feb, 2016
+- Fix in mummification script for picking issue.
+
+**** 19th Feb, 2016
+- Added heart, intestines.
+- Changes in mummification script.
+- Updated Readme.md.
+
+**** 19th Feb, 2016
+- Changes to mummification script
+	- Mummification process upto salting completed
+	- Body becomes opaque again after all organs are removed
+- Removed ChangeBodyTransparency script and moved its contents to Mummification script
+
+**** 19th Feb, 2016
+- Added sound effects and made design changes to pyramid.unity
+- Added texture for body wrapped in linen stage of mummification process
+
+**** 20th Feb, 2016
+- Mummification process upto mummy wrapping conpleted.
+
+**** 20th Feb, 2016
+- Mummification process script development completed.
+- Added new script MoveSarcophagusLid.cs
+- Added stone lid slide audio.
+- Updated Readme.md
+
+**** 21st Feb, 2016
+- Fixed issue with player sometimes not being able to pick anything after picking knife.
+
+**** 21st Feb, 2016
+- Added script for changing scene from pyramid to Presentation
+
+**** 21st Feb, 2016
+- Changed build target to Android
+- Removed audiopluginvrunity.dll from x86 folder to resolve build issue.
+
+**** 22nd Feb, 2016
+- Changed layermask code in MummificationScript.cs
+- Added conditions in MummificationScript.cs to prevent the user from diverting from mummification sequence. Need to add audio cues in place of the debug statements in case users divert.
+
+**** 22nd Feb, 2016
+- Fixed issue in which player was unable to pick up linen wrap
+- Fixed issue with sarcophagus lid not opening
+- Fixed issue with sarcophagus lid not closing completely and audio playing on every click
+- Changes to classroom scene
+- Updated Readme.md
+
+**** 23rd Feb, 2016
+- Added props and portal to lab scene
+- Added PortalOpen.cs
+
+**** 23rd Feb, 2016
+<<<<<<< HEAD
+- Removed extra room in presentation scene
+- REmoved extra particle effects
+=======
+- Tweaked Lab scene
+- Tweaked pyramid scene
+- Removed extra room in presentation scene
+>>>>>>> origin
