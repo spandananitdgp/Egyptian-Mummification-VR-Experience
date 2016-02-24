@@ -147,3 +147,10 @@
 **** 24th Feb, 2016
 - Added portal in Presentation scene to go back to lab
 - Added ExitGame.cs
+
+**** 24th Feb, 2015
+- Changed other people scale
+- Put one person in gold room
+- Added chant in gold room
+- Body becomes transparent once player picks up knife
+- Portal doesn't appear until player starts moving
