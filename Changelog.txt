@@ -159,3 +159,8 @@
 - Placed coffin_mummy in Lab scene
 - Removed a shiny ceiling in Presentation scene
 - Added Audio Recordings & Instructions
+
+**** 24th Feb, 2016
+- Added audio instructions.
+- Moved guard from sarcophagus room to the hallway.
+- Moved exit portal to the sarcophagus room.
