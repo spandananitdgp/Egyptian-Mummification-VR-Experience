@@ -2000,7 +2000,7 @@ Light:
   serializedVersion: 6
   m_Type: 2
   m_Color: {r: 1, g: 0.97495043, b: 0.82089555, a: 1}
-  m_Intensity: 1.68
+  m_Intensity: 1.75
   m_Range: 8.28
   m_SpotAngle: 30
   m_CookieSize: 10
