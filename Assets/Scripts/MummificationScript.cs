@@ -41,10 +41,26 @@ public class MummificationScript : MonoBehaviour {
 	private bool isPortalSoundLoopPlaying = false;
 	private bool isChantsAudioChanged = false;
 	public AudioClip chantsAudioClip;
-	public bool isChantInGoldRoomStarted = false;
+	private bool isChantInGoldRoomStarted = false;
+	private GameObject humanGuard;
+	private CardboardAudioSource playerAudioSource;
+	public AudioClip removeOrgansClip;
+	public AudioClip sarcophagusInstructionsClip;
+	public AudioClip knifeClip;
+	public AudioClip exitClip;
+	public AudioClip saltClip;
+	public AudioClip bodyPickClip;
+	public AudioClip bodyWrapClip;
+	private bool hasKnifeClipBeenPlayed = false;
+	private bool hasRemoveOrgansClipBeenPlayed = false;
+	private bool hasSaltClipBeenPlayed = false;
+	private bool hasSarcophagusClipBeenPlayed = false;
 
 	// Use this for initialization
 	void Start () {
+		playerAudioSource = thePlayer.GetComponent<CardboardAudioSource> ();
+		humanGuard = GameObject.Find ("humanbodyinGoldRoom");
+		humanGuard.SetActive (false);
 		portal.SetActive (false);
 
 		mummyTextureMaterial = new Material (Shader.Find ("Mobile/Diffuse"));
@@ -82,6 +98,12 @@ public class MummificationScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		float distanceBetweenPlayerAndBody = Vector3.Distance (thePlayer.transform.position, theBody.transform.position);
+		if (distanceBetweenPlayerAndBody <= 4.0f && !hasKnifeClipBeenPlayed) {
+			playerAudioSource.PlayOneShot (knifeClip);
+			hasKnifeClipBeenPlayed = true;
+		}
+
 		if (!isBodyTransparent) {
 			if (isKnifePicked) {
 				Material material = new Material (Shader.Find ("Legacy Shaders/Transparent/Diffuse"));
@@ -100,7 +122,7 @@ public class MummificationScript : MonoBehaviour {
 		}
 
 		if (isSarcophagusLidClosed  && !isPortalSoundLoopPlaying) {
-			Debug.Log ("Inside portal if 1");
+			playerAudioSource.PlayOneShot (exitClip);
 			portal.SetActive (true);
 			portalEffect.Play ();
 			CardboardAudioSource portalSoundSource = portal.GetComponent<CardboardAudioSource> ();
@@ -120,6 +142,22 @@ public class MummificationScript : MonoBehaviour {
 			startChantInGoldRoom ();
 		}
 
+		if (isKnifePicked) {
+			Debug.Log("Please remove the internal organs and put them in the basket beside you.");
+			if (!hasRemoveOrgansClipBeenPlayed) {
+				playerAudioSource.PlayOneShot (removeOrgansClip);
+				hasRemoveOrgansClipBeenPlayed = true;
+			}
+		}
+
+		if (isBodyPicked && !isBodyInCoffin) {
+			float distanceBetweenPlayerAndSarcophagus = Vector3.Distance (thePlayer.transform.position, sarcophagus.transform.position);
+			if (distanceBetweenPlayerAndSarcophagus <= 6.0f && !hasSarcophagusClipBeenPlayed) {
+				playerAudioSource.PlayOneShot (sarcophagusInstructionsClip);
+				hasSarcophagusClipBeenPlayed = true;
+			}
+		}
+
 		if (Input.GetButtonDown("Fire1")) {
 			if (isBodyTransparent && areInternalOrgansRemoved) {
 				Material material = new Material (Shader.Find ("Mobile/Diffuse"));
@@ -134,7 +172,6 @@ public class MummificationScript : MonoBehaviour {
 			if (isKnifePicked) {
 				knifeInHand = gameObjectsInHandReference["KnifeV1inHand"];
 				knifeInHandOriginalTransform = knifeInHand.transform;
-				Debug.Log("Please remove the internal organs and put them in the basket beside you."); //TODO: Play Audio here.
 			}
 
 			if(!isObjectInHand) {
@@ -164,7 +201,7 @@ public class MummificationScript : MonoBehaviour {
 				if (distanceBetweenPlayerAndSarcophagus <= 4.0f) {
 					isSarcophagusLidOpen = sarcophagus.GetComponent<MoveSarcophagusLid> ().openSarcophagusLid ();
 				} else {
-					Debug.Log ("Move further up the stairs!"); //TODO: Play Audio here.
+					Debug.Log ("Move further up the stairs!");
 				}
 			}
 		}
@@ -286,19 +323,25 @@ public class MummificationScript : MonoBehaviour {
 
 		if (isBrainPicked && areLungsPicked && areIntestinesPicked) {
 			areInternalOrgansRemoved = true;
-			Debug.Log("Good! Now pour the salt from the pot on the body."); //TODO: Play Audio here.
+			Debug.Log("Good! Now pour the salt from the pot on the body.");
+			if (!hasSaltClipBeenPlayed) {
+				playerAudioSource.PlayOneShot (saltClip);
+				hasSaltClipBeenPlayed = true;
+			}
 		}
 	}
 
 	void pourSalt() {
 		saltOnTable.SetActive (true);
-		Debug.Log ("Now take the resin dipped linen strips and wrap the body."); //TODO: Play Audio here.
+		Debug.Log ("Now take the resin dipped linen strips and wrap the body.");
+		playerAudioSource.PlayOneShot (bodyWrapClip);
 	}
 
 	void mummify() {
 		theBody.GetComponent<SkinnedMeshRenderer> ().material = mummyTextureMaterial;
 		isBodyMummified = true;
-		Debug.Log ("Now we put the mummy in the sarcophagus. Pick up the body and follow the directions."); //TODO: Play Audio here.
+		Debug.Log ("Now we put the mummy in the sarcophagus. Pick up the body and follow the directions.");
+		playerAudioSource.PlayOneShot (bodyPickClip);
 	}
 
 	void changeChantsAudio() {
@@ -312,6 +355,7 @@ public class MummificationScript : MonoBehaviour {
 	}
 
 	void startChantInGoldRoom() {
+		humanGuard.SetActive (true);
 		GameObject humanbodyinGoldRoom = GameObject.Find ("humanbodyinGoldRoom/ChantsInGoldRoom");
 		CardboardAudioSource chantInGoldRoomSource = humanbodyinGoldRoom.GetComponent<CardboardAudioSource> ();
 		chantInGoldRoomSource.Play ();

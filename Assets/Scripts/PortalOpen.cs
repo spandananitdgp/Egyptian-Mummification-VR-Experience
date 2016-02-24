@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(CardboardAudioSource))]
 public class PortalOpen : MonoBehaviour {
@@ -19,6 +21,10 @@ public class PortalOpen : MonoBehaviour {
 	private bool startCountdown = false;
 	private float playerOriginalPosition;
 	private GameObject thePlayer;
+	private Dictionary<string, GameObject> gameObjectsInHandReference;
+	private Dictionary<string, GameObject> pickableGameObjectsReference;
+	public LayerMask layerMask;
+	private bool hasSouveneirClipBeenPlayed = false;
 
 	// Use this for initialization
 	void Start () {
@@ -29,6 +35,27 @@ public class PortalOpen : MonoBehaviour {
 		portalSoundSource = this.gameObject.GetComponent<CardboardAudioSource> ();
 		portalSoundSource.clip = portalOpen;
 		portalSoundSource.loop = false;
+
+		GameObject[] pickableGameObjects = GameObject.FindGameObjectsWithTag ("Pickable");
+		pickableGameObjectsReference = new Dictionary<string, GameObject> ();
+		foreach (GameObject gameObject in pickableGameObjects) {
+			pickableGameObjectsReference.Add(gameObject.name, gameObject);
+			if (isExperienceComplete) {
+				gameObject.SetActive (true);
+			} else {
+				gameObject.SetActive (false);
+			}
+		}
+
+		if (SceneManager.GetActiveScene ().name == "Lab") {
+			GameObject[] gameObjectsInHand = GameObject.FindGameObjectsWithTag ("Picked");
+			gameObjectsInHandReference = new Dictionary<string, GameObject> ();
+			foreach (GameObject gameObject in gameObjectsInHand) {
+				gameObjectsInHandReference.Add(gameObject.name, gameObject);
+				gameObject.SetActive(false);
+			}
+		}
+
 		if (isExperienceComplete) {
 			autoOpen = false;
 		}
@@ -38,6 +65,26 @@ public class PortalOpen : MonoBehaviour {
 	void Update () {
 		if ((Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Vertical") > 0) && !startCountdown) {
 			startCountdown = true;
+		}
+
+		if (isExperienceComplete && !hasSouveneirClipBeenPlayed) {
+			CardboardAudioSource playerAudioSource = thePlayer.GetComponent<CardboardAudioSource> ();
+			playerAudioSource.Play();
+			hasSouveneirClipBeenPlayed = true;
+		}
+
+		if (Input.GetButtonDown ("Fire1")) {
+			if (isExperienceComplete) {
+				RaycastHit hitInfo;
+				if (Physics.Raycast (Cardboard.SDK.GetComponentInChildren<CardboardHead> ().Gaze, out hitInfo, Mathf.Infinity, layerMask)) {
+					if (hitInfo.transform.gameObject.tag == "Pickable") {
+						GameObject pickableObject = hitInfo.transform.gameObject;
+						pickableObject.SetActive(false);
+						GameObject objectPickedInHand = gameObjectsInHandReference[pickableObject.name + "inHand"];
+						objectPickedInHand.SetActive(true);
+					}
+				}
+			}
 		}
 		if (autoOpen && startCountdown) {
 			waitBeforeOpen -= Time.deltaTime;
