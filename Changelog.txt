@@ -137,3 +137,4 @@
 
 **** 23rd Feb, 2016
 - Removed extra room in presentation scene
+- REmoved extra particle effects
