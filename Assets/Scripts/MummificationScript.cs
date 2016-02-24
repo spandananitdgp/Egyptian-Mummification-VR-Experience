@@ -34,9 +34,16 @@ public class MummificationScript : MonoBehaviour {
 	private bool isBodyInCoffin = false;
 	private bool isSarcophagusLidClosed = false;
 	public LayerMask layerMask;
+	public GameObject portal;
+	public AudioClip portalOpen;
+	public AudioClip portalSoundLoop;
+	public ParticleSystem portalEffect;
+	private bool isPortalSoundLoopPlaying = false;
 
 	// Use this for initialization
 	void Start () {
+		portal.SetActive (false);
+
 		mummyTextureMaterial = new Material (Shader.Find ("Mobile/Diffuse"));
 		mummyTextureMaterial.mainTexture = mummyTexture;
 		mummyTextureMaterial.mainTextureScale = new Vector2 (5.0f, 5.0f);
@@ -89,6 +96,19 @@ public class MummificationScript : MonoBehaviour {
 			bodyCollider.size = new Vector3(2.831509f, 9.839473f, 1.66662f);
 			theBody.transform.parent.gameObject.tag = "Pickable";
 			isBodyPickable = true;
+		}
+
+		if (isSarcophagusLidClosed  && !isPortalSoundLoopPlaying) {
+			Debug.Log ("Inside portal if 1");
+			portal.SetActive (true);
+			portalEffect.Play ();
+			CardboardAudioSource portalSoundSource = portal.GetComponent<CardboardAudioSource> ();
+			portalSoundSource.PlayOneShot (portalOpen);
+			portalSoundSource.clip = portalSoundLoop;
+			portalSoundSource.loop = true;
+			portalSoundSource.Play ();
+			isPortalSoundLoopPlaying = true;
+			PortalOpen.isExperienceComplete = true;
 		}
 
 		if (Input.GetButtonDown("Fire1")) {
