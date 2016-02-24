@@ -140,3 +140,6 @@
 - Tweaked pyramid scene
 - Removed extra room in presentation scene- Removed extra room in presentation scene
 - REmoved extra particle effects
+
+**** 23rd Feb, 2016
+- Added multithreaded rendering and preload shaders for optimization
