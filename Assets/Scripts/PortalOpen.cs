@@ -16,10 +16,15 @@ public class PortalOpen : MonoBehaviour {
 	private bool isOpenPortal = false;
 	private bool isPortalSoundLoopPlaying = false;
 	public static bool isExperienceComplete = false;
+	private bool startCountdown = false;
+	private float playerOriginalPosition;
+	private GameObject thePlayer;
 
 	// Use this for initialization
 	void Start () {
-		waitBeforeOpen = 2.0f;
+		waitBeforeOpen = 1.0f;
+		thePlayer = GameObject.Find ("CardboardMain/FPSController");
+		playerOriginalPosition = thePlayer.transform.position.z;
 		portalOriginalPosition = this.transform.localPosition;
 		portalSoundSource = this.gameObject.GetComponent<CardboardAudioSource> ();
 		portalSoundSource.clip = portalOpen;
@@ -31,7 +36,10 @@ public class PortalOpen : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (autoOpen) {
+		if ((Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Vertical") > 0) && !startCountdown) {
+			startCountdown = true;
+		}
+		if (autoOpen && startCountdown) {
 			waitBeforeOpen -= Time.deltaTime;
 			if (waitBeforeOpen <= 0.0f) {
 				openPortal ();

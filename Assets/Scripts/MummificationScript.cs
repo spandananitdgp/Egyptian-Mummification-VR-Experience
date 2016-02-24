@@ -39,6 +39,9 @@ public class MummificationScript : MonoBehaviour {
 	public AudioClip portalSoundLoop;
 	public ParticleSystem portalEffect;
 	private bool isPortalSoundLoopPlaying = false;
+	private bool isChantsAudioChanged = false;
+	public AudioClip chantsAudioClip;
+	public bool isChantInGoldRoomStarted = false;
 
 	// Use this for initialization
 	void Start () {
@@ -80,9 +83,7 @@ public class MummificationScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (!isBodyTransparent) {
-			float distanceBetweenPlayerAndBody = Vector3.Distance (thePlayer.transform.position, theBody.transform.position);
-			if (distanceBetweenPlayerAndBody <= 3.0f) {
-				//Debug.Log("Change Transparency");
+			if (isKnifePicked) {
 				Material material = new Material (Shader.Find ("Legacy Shaders/Transparent/Diffuse"));
 				material.mainTexture = transparentTexture;
 				theBody.GetComponent<SkinnedMeshRenderer> ().material = material;
@@ -109,6 +110,14 @@ public class MummificationScript : MonoBehaviour {
 			portalSoundSource.Play ();
 			isPortalSoundLoopPlaying = true;
 			PortalOpen.isExperienceComplete = true;
+		}
+
+		if (isBrainPicked && !isChantsAudioChanged) {
+			changeChantsAudio ();
+		}
+
+		if (isBodyPicked && !isChantInGoldRoomStarted) {
+			startChantInGoldRoom ();
 		}
 
 		if (Input.GetButtonDown("Fire1")) {
@@ -290,5 +299,22 @@ public class MummificationScript : MonoBehaviour {
 		theBody.GetComponent<SkinnedMeshRenderer> ().material = mummyTextureMaterial;
 		isBodyMummified = true;
 		Debug.Log ("Now we put the mummy in the sarcophagus. Pick up the body and follow the directions."); //TODO: Play Audio here.
+	}
+
+	void changeChantsAudio() {
+		GameObject chants = GameObject.Find ("The Pyramid/Posag05/Chants");
+		CardboardAudioSource chantsAudioSource = chants.GetComponent<CardboardAudioSource> ();
+		if (!chantsAudioSource.isPlaying) {
+			chantsAudioSource.clip = chantsAudioClip;
+			chantsAudioSource.Play ();
+			isChantsAudioChanged = true;
+		}
+	}
+
+	void startChantInGoldRoom() {
+		GameObject humanbodyinGoldRoom = GameObject.Find ("humanbodyinGoldRoom/ChantsInGoldRoom");
+		CardboardAudioSource chantInGoldRoomSource = humanbodyinGoldRoom.GetComponent<CardboardAudioSource> ();
+		chantInGoldRoomSource.Play ();
+		isChantInGoldRoomStarted = true;
 	}
 }
