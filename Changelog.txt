@@ -143,3 +143,7 @@
 
 **** 23rd Feb, 2016
 - Added multithreaded rendering and preload shaders for optimization
+
+**** 24th Feb, 2016
+- Added portal in Presentation scene to go back to lab
+- Added ExitGame.cs

@@ -15,6 +15,7 @@ public class PortalOpen : MonoBehaviour {
 	private CardboardAudioSource portalSoundSource;
 	private bool isOpenPortal = false;
 	private bool isPortalSoundLoopPlaying = false;
+	public static bool isExperienceComplete = false;
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +24,9 @@ public class PortalOpen : MonoBehaviour {
 		portalSoundSource = this.gameObject.GetComponent<CardboardAudioSource> ();
 		portalSoundSource.clip = portalOpen;
 		portalSoundSource.loop = false;
+		if (isExperienceComplete) {
+			autoOpen = false;
+		}
 	}
 	
 	// Update is called once per frame

@@ -2102,6 +2102,7 @@ GameObject:
   - 114: {fileID: 1328577746}
   - 135: {fileID: 1328577752}
   - 114: {fileID: 1328577751}
+  - 114: {fileID: 1328577753}
   m_Layer: 0
   m_Name: FPSController
   m_TagString: Untagged
@@ -2367,6 +2368,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1328577753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1328577744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29389bfc88b7db5419045d6f3d3bca72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1346696699
 Prefab:
   m_ObjectHideFlags: 0
