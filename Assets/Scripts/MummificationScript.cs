@@ -290,12 +290,14 @@ public class MummificationScript : MonoBehaviour {
 		if (objectInHand.name.Contains ("Pot")) {
 			GameObject saltPot = pickableGameObjectsReference[objectInHand.name.Replace("inHand", "")];
 			saltPot.SetActive(true);
-			Destroy (objectInHand);
+			//Destroy (objectInHand);
+			objectInHand.SetActive(false);
 			knifeInHand.SetActive (false);
 		} else if(objectInHand.name.Contains ("roll")) {
 			GameObject roll = pickableGameObjectsReference[objectInHand.name.Replace("inHand", "")];
 			roll.SetActive(true);
-			Destroy (objectInHand);
+			//Destroy (objectInHand);
+			objectInHand.SetActive(false);
 			knifeInHand.SetActive (false);
 		} else {
 			RaycastHit hitInfo;
